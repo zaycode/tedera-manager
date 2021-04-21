@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11.033" height="8.176" viewBox="0 0 11.033 8.176">
+  <g id="car" transform="translate(-0.65 -0.65)">
+    <path id="Path_1" data-name="Path 1" d="M1,4.321H11.333" fill="none" stroke="#d1d3d6" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"/>
+    <path id="Path_2" data-name="Path 2" d="M10.6,7V8.107a.369.369,0,0,1-.369.369H9.119a.369.369,0,0,1-.369-.369V7.5" fill="none" stroke="#d1d3d6" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"/>
+    <path id="Path_3" data-name="Path 3" d="M3.583,7.5V8a.369.369,0,0,1-.369.369H2.107A.369.369,0,0,1,1.738,8V6.893" fill="none" stroke="#d1d3d6" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"/>
+    <path id="Path_4" data-name="Path 4" d="M3.214,5.8h.738" fill="none" stroke="#d1d3d6" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"/>
+    <path id="Path_5" data-name="Path 5" d="M8.381,5.8h.738" fill="none" stroke="#d1d3d6" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"/>
+    <path id="Path_6" data-name="Path 6" d="M10.6,4.321l-1.379-3.1A.369.369,0,0,0,8.879,1H3.454a.369.369,0,0,0-.337.219l-1.379,3.1V7.274H10.6Z" fill="none" stroke="#d1d3d6" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"/>
+  </g>
+</svg>
