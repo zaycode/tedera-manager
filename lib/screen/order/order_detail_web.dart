@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -493,28 +494,20 @@ class _OrderDetailWebState extends State<OrderDetailWeb> {
                                                           .status = true;
                                                     });
                                                   },
-                                                  child: Container(
+                                                  child:Container(
+                                                    alignment: Alignment.center,
+                                                    height: 24,
+                                                    padding: EdgeInsets.symmetric(horizontal: 16),
                                                     decoration: BoxDecoration(
-                                                      color:
-                                                          CustomColor.primary,
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8),
-                                                    ),
-                                                    child: Text(
-                                                      deliveryProcess[index]
-                                                          .title,
+                                                        color: CustomColor.primary,
+                                                        borderRadius: BorderRadius.circular(50)),
+                                                    child: Text(deliveryProcess[index].title,
                                                       style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 10,
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                      ),
+                                                          fontSize: kIsWeb?12:11,
+                                                          height: 1.4,
+                                                          fontWeight: FontWeight.w500,
+                                                          color: Colors.white ),
                                                     ),
-                                                    padding:
-                                                        EdgeInsets.symmetric(
-                                                            vertical: 6,
-                                                            horizontal: 12),
                                                   ),
                                                 ),
                                               ),

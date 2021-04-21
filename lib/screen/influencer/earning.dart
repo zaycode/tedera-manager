@@ -24,7 +24,7 @@ class Earning extends StatelessWidget {
                     Container(
                       width: 129,
                       height: 35,
-                      margin: EdgeInsets.only(right: 10, left: 16),
+                      margin: EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.white,

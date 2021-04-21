@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
@@ -388,28 +389,19 @@ class _OrderDetailMobileState extends State<OrderDetailMobile> {
                                                         });
                                                       },
                                                       child: Container(
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: CustomColor
-                                                              .primary,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(8),
+                                                        alignment: Alignment.center,
+                                                        height: 24,
+                                                        padding: EdgeInsets.symmetric(horizontal: 16),
+                                                        decoration: BoxDecoration(
+                                                            color: CustomColor.primary,
+                                                            borderRadius: BorderRadius.circular(50)),
+                                                        child: Text(deliveryProcess[index].title,
+                                                            style: TextStyle(
+                                                                fontSize: kIsWeb?12:11,
+                                                                height: 1.4,
+                                                                fontWeight: FontWeight.w500,
+                                                                color: Colors.white ),
                                                         ),
-                                                        child: Text(
-                                                          deliveryProcess[index]
-                                                              .title,
-                                                          style: TextStyle(
-                                                            color: Colors.white,
-                                                            fontSize: 10,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
-                                                        ),
-                                                        padding: EdgeInsets
-                                                            .symmetric(
-                                                                vertical: 6,
-                                                                horizontal: 12),
                                                       ),
                                                     ),
                                                   ),
