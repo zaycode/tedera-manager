@@ -62,10 +62,9 @@ Widget itemOrderManager(context, String status) {
         bottom: 11,
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(
-              child: Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Kichi Coffee & Drink", style: textHeader3),
@@ -75,12 +74,15 @@ Widget itemOrderManager(context, String status) {
                   Text("12.02.2022", style: textDefaultGrey),
                   Text(" - Delivery",
                       style:
-                          textDefaultGrey.copyWith(fontWeight: FontWeight.w700))
+                      textDefaultGrey.copyWith(fontWeight: FontWeight.w700))
                 ],
               ),
             ],
-          )),
-          SizedBox(width: 10),
+          ),
+          status=="Placed"?Text(
+            "4:59",
+            style:  textHeader3.copyWith(color: CustomColor.primary),
+          ):Container(),
           Text(
             status.toUpperCase(),
             textAlign: TextAlign.center,

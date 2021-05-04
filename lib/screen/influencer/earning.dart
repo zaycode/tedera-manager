@@ -1,20 +1,55 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:tederaadmin/screen/base_web_layout.dart';
 import 'package:tederaadmin/screen/commonts/appbar_mobile.dart';
 import 'package:tederaadmin/screen/commonts/appbar_web.dart';
+import 'package:tederaadmin/screen/notification/notification_screen.dart';
 import 'package:tederaadmin/util/color.dart';
 import 'package:tederaadmin/util/style_constant.dart';
 
 class Earning extends StatelessWidget {
+  final PersistentTabController tabController;
+  Earning({this.tabController});
   @override
   Widget build(BuildContext context) {
     if (!kIsWeb) {
       return Scaffold(
-          appBar: PreferredSize(
-              preferredSize: Size.fromHeight(50.0),
-              child: AppBarMobile(title: "Earning")),
+          appBar: AppBar(
+              leading: IconButton(
+                icon: SvgPicture.asset("assets/svg/back.svg"),
+                onPressed: () =>tabController.jumpToTab(0),
+              ),
+              title: Text("Orders"),
+              automaticallyImplyLeading: false,
+              iconTheme: IconThemeData(color: Colors.transparent),
+              actions: [
+                IconButton(
+                    icon: Stack(
+                      children: [
+                        SvgPicture.asset("assets/svg/notification.svg"),
+                        Positioned(
+                          right: 0,
+                          child: Container(
+                            width: 8,
+                            height: 8,
+                            decoration: BoxDecoration(
+                                color: CustomColor.primary,
+                                borderRadius: BorderRadius.circular(8)),
+                          ),
+                        )
+                      ],
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  NotificationScreen()));
+                    }),
+              ]),
           body: Container(
             margin: EdgeInsets.symmetric(horizontal: 16),
             child: Column(

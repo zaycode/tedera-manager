@@ -75,7 +75,7 @@ class _NavigationState extends State<Navigation> {
   List<Widget> _buildScreens() {
     return [
       SharedPrefs().getString("role")!="INFLUENCER"?Home(tabController: _controller):Influencer(),
-      SharedPrefs().getString("role")!="INFLUENCER"?Order(tabController: _controller):Earning(),
+      SharedPrefs().getString("role")!="INFLUENCER"?Order(tabController: _controller):Earning(tabController: _controller),
       Chat(tabController: _controller),
       Profile()
     ];

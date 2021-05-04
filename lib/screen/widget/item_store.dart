@@ -108,25 +108,13 @@ class _ItemStoreState extends State<ItemStore> {
                       children: [
                         Container(
                           margin:EdgeInsets.only(right:9),
-                          child: Text(
-                              "Manager: 1",
-                              style: textSmall
-                          ),
+                          child:Image.asset("assets/images/user.png")
                         ),
-                        Container(
-                          margin:EdgeInsets.only(right:9),
-                          child: Text(
-                              "Cook: 2",
-                              style: textSmall
-                          ),
+
+                        Text(
+                            "Manager",
+                            style: textSmall
                         ),
-                        Container(
-                          margin:EdgeInsets.only(right:9),
-                          child: Text(
-                              "Driver: 0",
-                              style: textSmall
-                          ),
-                        )
 
                       ],
                     )

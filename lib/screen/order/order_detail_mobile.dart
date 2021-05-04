@@ -563,6 +563,10 @@ class _OrderDetailMobileState extends State<OrderDetailMobile> {
                                   ),
                                 )),
                           ),
+                          Text(
+                            "4:59",
+                            style:  textHeader3.copyWith(color: CustomColor.primary),
+                          ),
                           InkWell(
                             onTap: () {
                               setState(() {
