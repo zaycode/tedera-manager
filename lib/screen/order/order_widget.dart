@@ -24,7 +24,7 @@ List<String> statusListManager = [
 ];
 
 List<String> statusListCookDriver = [
-  "New",
+  "Placed",
   "New",
   "Accepted",
   "Accepted",
@@ -126,32 +126,41 @@ Widget itemOrderDriverCook(context, String status) {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text("Kichi Coffee & Drink", style: textHeader3),
-                  SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Text("12.02.2022", style: textDefaultGrey),
-                      Text(" - Delivery",
-                          style:
-                          textDefaultGrey.copyWith(fontWeight: FontWeight.w700))
-                    ],
-                  ),
-                ],
-              )),
-          SizedBox(width: 10),
-          Text(
-            status.toUpperCase(),
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color:
-              status == "New" ? CustomColor.primary :
-              status == "Accepted"? CustomColor.green:
-              CustomColor.silver,
-              fontSize: 11,
-              fontWeight: FontWeight.w600,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("Kichi Coffee & Drink", style: textHeader3),
+                SizedBox(height: 10),
+                Row(
+                  children: [
+                    Text("12.02.2022", style: textDefaultGrey),
+                    Text(" - Delivery",
+                        style:
+                        textDefaultGrey.copyWith(fontWeight: FontWeight.w700))
+                  ],
+                ),
+              ],
+            ),
+          ),
+          status=="Placed"?Text(
+            "4:59",
+            style:  textHeader3.copyWith(color: CustomColor.primary),
+          ):Container(),
+
+          Container(
+            width: 100,
+            alignment: Alignment.centerRight,
+            child: Text(
+              status.toUpperCase(),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color:
+                status == "New" ? CustomColor.primary :
+                status == "Accepted"? CustomColor.green:
+                CustomColor.silver,
+                fontSize: 11,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
         ],
@@ -630,12 +639,7 @@ Widget assignmentDialog(BuildContext context){
         Text(
           "Assignment",
           textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Color(0xff222b45),
-            fontSize: 18,
-            fontFamily: "Montserrat",
-            fontWeight: FontWeight.w700,
-          ),
+          style: textHeader1,
         ),
 
         Container(
@@ -645,7 +649,11 @@ Widget assignmentDialog(BuildContext context){
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Color(0xfffbfbfb),
-              border: Border.all(color: Color(0xffe6e6e6), width: 1, ),
+              boxShadow: [ BoxShadow(
+                color: Color(0x23626b95),
+                blurRadius: 15,
+                offset: Offset(0, 2),
+              ),],
           ),
           padding:  EdgeInsets.all(11),
           child: Row(
@@ -667,7 +675,13 @@ Widget assignmentDialog(BuildContext context){
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Color(0xfffbfbfb),
-              border: Border.all(color: Color(0xffe6e6e6), width: 1, ),
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0x23626b95),
+                  blurRadius: 15,
+                  offset: Offset(0, 2),
+                ),
+              ],
           ),
           padding:  EdgeInsets.all(11),
           child: Row(

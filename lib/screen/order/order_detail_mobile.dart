@@ -329,8 +329,95 @@ class _OrderDetailMobileState extends State<OrderDetailMobile> {
                             : Container(),
 
                         status != "Cancel" ? contactOrder() : Container(),
-                     role == "MANAGER" && status == "Accepted"
-                            ? assignmentWidget(context)
+                     role == "MANAGER" && status != "Placed" ? Container(
+                       margin: EdgeInsets.only(top: 20),
+                       child: Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                         children: [
+                           Column(
+                             crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Row(
+                                 children: [
+                                   Text(
+                                     "Cook: ",
+                                     style: TextStyle(
+                                       color: Color(0xff5b5b5b),
+                                       fontSize: 10,
+                                       fontFamily: "Montserrat",
+                                       fontWeight: FontWeight.w500,
+                                     ),
+                                   ),
+                                   Text(
+                                     status!="Accepted" && status!="Placed"?"Lisa Maona":"No assignment",
+                                     style: TextStyle(
+                                       color: status=="Accepted"?CustomColor.gray:status=="Prepared"?CustomColor.darkBlue:CustomColor.green,
+                                       fontSize: status=="Accepted"?10:11,
+                                       fontWeight: status=="Accepted"?FontWeight.w500:FontWeight.w600,
+                                     ),
+                                   ),
+                                   SizedBox(width: 4),
+                                   status=="Prepared"?Text(
+                                     "4:59",
+                                     style:  textDefault.copyWith(color: CustomColor.primary),
+                                   ):Container()
+                                 ],
+                               ),
+                               SizedBox(height: 4),
+                               Row(
+                                 children: [
+                                   Text(
+                                     "Driver: ",
+                                     style: TextStyle(
+                                       color: Color(0xff5b5b5b),
+                                       fontSize: 10,
+                                       fontFamily: "Montserrat",
+                                       fontWeight: FontWeight.w500,
+                                     ),
+                                   ),
+                                   Text(
+                                     status!="Accepted" && status!="Placed" && status!="Prepared"?"Miki Tomy":"No assignment",
+                                     style: TextStyle(
+                                       color:status=="Delivered"?CustomColor.green:status=="On the Way"?CustomColor.darkBlue:CustomColor.gray,
+                                       fontSize: status=="Accepted"?10:11,
+                                       fontWeight: status!="Delivered"&&status!="On the Way"?FontWeight.w500:FontWeight.w600,
+                                     ),
+                                   ),
+                                   SizedBox(width: 4),
+                                   status=="On the Way"?Text(
+                                     "4:59",
+                                     style:  textDefault.copyWith(color: CustomColor.primary),
+                                   ):Container()
+                                 ],
+                               ),
+
+                             ],
+                           ),
+                           InkWell(
+                             onTap: (){
+                               showMaterialModalBottomSheet(
+                                   context: context,
+                                   backgroundColor: Colors.transparent,
+                                   builder: (context) => BaseBottomSheet(child:assignmentDialog(context)));
+                             },
+                             child: Container(
+                               width: 149,
+                               height: 35,
+                               alignment: Alignment.center,
+                               decoration: BoxDecoration(
+                                 borderRadius: BorderRadius.circular(50),
+                                 border: Border.all(
+                                   color: Color(0xfff1f1f1),
+                                   width: 1,
+                                 ),
+                               ),
+                               child: Text("Assign",
+                                   textAlign: TextAlign.center, style: textHeader4),
+                             ),
+                           ),
+                         ],
+                       ),
+                     )
                             : Container(),
                         SizedBox(height: 20),
                         Column(

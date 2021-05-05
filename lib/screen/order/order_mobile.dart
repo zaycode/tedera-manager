@@ -10,7 +10,6 @@ import 'package:tederaadmin/util/style_constant.dart';
 import 'package:tederaadmin/screen/notification/notification_screen.dart';
 import 'package:tederaadmin/screen/order/order_widget.dart';
 
-
 class OrderMobile extends StatefulWidget {
   final PersistentTabController tabController;
 
@@ -24,12 +23,11 @@ class _OrderMobileState extends State<OrderMobile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar:
-        AppBar(
+        appBar: AppBar(
             leading: IconButton(
-          icon: SvgPicture.asset("assets/svg/back.svg"),
-          onPressed: () =>widget.tabController.jumpToTab(1),
-        ),
+              icon: SvgPicture.asset("assets/svg/back.svg"),
+              onPressed: () => widget.tabController.jumpToTab(1),
+            ),
             title: Text("Orders"),
             automaticallyImplyLeading: false,
             iconTheme: IconThemeData(color: Colors.transparent),
@@ -58,15 +56,14 @@ class _OrderMobileState extends State<OrderMobile> {
                                 NotificationScreen()));
                   }),
             ]),
-        body:
-        Column(
+        body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 40,
               child: ListView(
-                padding: EdgeInsets.only(left:16,right: 2,bottom: 4),
+                padding: EdgeInsets.only(left: 16, right: 2, bottom: 4),
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
                 children: [
@@ -76,68 +73,69 @@ class _OrderMobileState extends State<OrderMobile> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
-                        boxShadow: [
-                          boxShadow
-                        ]
-                    ),
-                    padding:  EdgeInsets.all(11),
+                        boxShadow: [boxShadow]),
+                    padding: EdgeInsets.all(11),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children:[
+                      children: [
                         Text(
                           "Type",
                           style: textDefaultGrey,
                         ),
-                        Icon(CupertinoIcons.chevron_down,size: 14, color: CustomColor.silver,)
+                        Icon(
+                          CupertinoIcons.chevron_down,
+                          size: 14,
+                          color: CustomColor.silver,
+                        )
                       ],
                     ),
                   ),
                   Container(
                     width: 129,
-
                     margin: EdgeInsets.only(right: 10),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
-                        boxShadow: [
-                          boxShadow
-                        ]
-                    ),
+                        boxShadow: [boxShadow]),
                     padding: const EdgeInsets.all(11),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children:[
+                      children: [
                         Text(
                           "Status",
                           style: textDefaultGrey,
                         ),
-                        Icon(CupertinoIcons.chevron_down,size: 14, color: CustomColor.silver,)
+                        Icon(
+                          CupertinoIcons.chevron_down,
+                          size: 14,
+                          color: CustomColor.silver,
+                        )
                       ],
                     ),
                   ),
                   Container(
                     width: 129,
-
                     margin: EdgeInsets.only(right: 10),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.white,
-                        boxShadow: [
-                          boxShadow
-                        ]
-                    ),
+                        boxShadow: [boxShadow]),
                     padding: const EdgeInsets.all(11),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
-                      children:[
+                      children: [
                         Text(
                           "Last 30 Days",
                           style: textDefaultGrey,
                         ),
-                        Icon(CupertinoIcons.chevron_down,size: 14, color: CustomColor.silver,)
+                        Icon(
+                          CupertinoIcons.chevron_down,
+                          size: 14,
+                          color: CustomColor.silver,
+                        )
                       ],
                     ),
                   ),
@@ -146,20 +144,18 @@ class _OrderMobileState extends State<OrderMobile> {
             ),
             Expanded(
               child: ListView.builder(
-                padding: EdgeInsets.only(bottom: 50,left: 16,right: 16,top: 8),
-                shrinkWrap: true,
-                itemCount: 7,
-                itemBuilder: (BuildContext context, int index) {
-                  if(SharedPrefs().getString("role")=="MANAGER"){
-                    return itemOrderManager(
-                        context,
-                        statusListManager[index]);
-                  }
-                  return itemOrderDriverCook(
-                      context,
-                      statusListCookDriver[index]);
-                }
-              ),
+                  padding:
+                      EdgeInsets.only(bottom: 50, left: 16, right: 16, top: 8),
+                  shrinkWrap: true,
+                  itemCount: 7,
+                  itemBuilder: (BuildContext context, int index) {
+                    if (SharedPrefs().getString("role") == "MANAGER") {
+                      return itemOrderManager(
+                          context, statusListManager[index]);
+                    }
+                    return itemOrderDriverCook(
+                        context, statusListCookDriver[index]);
+                  }),
             ),
           ],
         ));

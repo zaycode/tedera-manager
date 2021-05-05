@@ -67,12 +67,7 @@ class _ItemStoreState extends State<ItemStore> {
                           margin: EdgeInsets.only(right:8),
                           child: Text(
                             "Restaurant",
-                            style: TextStyle(
-                              color: Color(0xff222b45),
-                              fontSize: 11,
-                              fontFamily: "Montserrat",
-                              fontWeight: FontWeight.w600,
-                            ),
+                            style: textDefault,
 
                           ),
                         ),
@@ -107,14 +102,18 @@ class _ItemStoreState extends State<ItemStore> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          margin:EdgeInsets.only(right:9),
+                          margin:EdgeInsets.only(right:4),
                           child:Image.asset("assets/images/user.png")
                         ),
-
                         Text(
-                            "Manager",
-                            style: textSmall
-                        ),
+                          "Manager",
+                          style: TextStyle(
+                            color: Color(0xff222b45),
+                            fontSize: 9,
+                            fontFamily: "Montserrat",
+                            fontWeight: FontWeight.w700,
+                          ),
+                        )
 
                       ],
                     )
